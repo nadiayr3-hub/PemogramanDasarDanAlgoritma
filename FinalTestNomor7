@@ -1,0 +1,49 @@
+#Tipe Data Utama atau umumnya yang sering dipakai minimanl 3
+# 1. Tipe Data Integer (Bilangan Bulat)
+# Digunakan untuk menyimpan angka tanpa komponen desimal.
+umur = 19
+tahun_lahir = 2006
+tanggal_lahir = 25
+
+print(f"--- 1. INTEGER (int) ---")
+print(f"Variabel 'umur': {umur}, Tipe: {type(umur)}")
+print(f"Variabel 'tahun_lahir': {tahun_lahir}, Tipe: {type(tahun_lahir)}")
+print(f"Contoh Operasi: 2 * umur = {2 * umur}")
+print("-" * 20)
+
+
+# --- Mendeklarasikan Variabel Boolean ---
+print(f"--- 2.BOOLEAN ---")
+nadia_cantik = True
+tidak_cantik = False
+
+print("nadia cantik:", nadia_cantik) # Output: True
+print("nadia tidak cantik?:", tidak_cantik) # Output: False
+
+#Boolean dari Hasil Perbandingan
+# Apakah 10 lebih besar dari 5?
+hasil = 10 > 5 
+print("Apakah 10 > 5?", hasil) # Output: True
+
+# Apakah 5 sama dengan 10?
+hasil2 = 5 == 10
+print("Apakah 5 == 10?", hasil2) # Output: False
+print("-" *20)
+
+# 3. Tipe Data String (Teks)
+# Digunakan untuk menyimpan urutan karakter (teks). Ditulis dalam tanda kutip ('' atau "").
+# Definisi data diri dan pesan
+print(f"--- 3. STRING ---")
+nama = "nadia"
+idola = "dahyun twice"
+kata_kata = "jangan karna aku sistem informasi, kamu jadikan aku opsi"
+
+# Menggabungkan semua informasi dalam satu string output
+output_string = (
+    f"Perkenalkan, saya **{nama}** (idola saya {idola}). "
+    f"kata kata hari ini : '{kata_kata}'."
+)
+
+# Menampilkan hasilnya
+print(output_string)
+
