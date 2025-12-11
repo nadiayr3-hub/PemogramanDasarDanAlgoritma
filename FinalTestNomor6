@@ -1,0 +1,16 @@
+#Dictionary
+data_diri = {
+    "nama": "Nadia",
+    "usia": 19,
+    "status": "Mahasiswa",
+    "alamat": {
+        "kota": "polewali",
+    },
+    "keterampilan": ["Python", "SQL", "Flask", "Git"]
+}
+
+# Contoh cara mengakses data
+print(f"Nama: {data_diri['nama']}")
+print(f"Usia: {data_diri['usia']} tahun")
+print(f"Kota tinggal: {data_diri['alamat']['kota']}")
+print(f"Keterampilan utama: {data_diri['keterampilan'][0]}")
