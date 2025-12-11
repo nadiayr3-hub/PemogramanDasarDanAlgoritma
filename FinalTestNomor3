@@ -1,0 +1,72 @@
+#Algoritma Binary Search dan Interpolation Search
+print(f"---BYNARY SEARCH---")
+def binary_search(arr, key):
+    low = 0
+    high = len(arr) - 1
+
+    while low <= high:
+        mid = (low + high) // 2
+
+        if arr[mid] == key:
+            return mid
+        elif arr[mid] < key:
+            low = mid + 1
+        else:
+            high = mid - 1
+
+    return -1
+
+
+# Contoh penggunaan
+buah = ["apel", "durian", "jeruk", "mangga", "pisang", "semangka"]
+buah.sort()   # penting: harus terurut
+
+cari = "mangga"
+pos = binary_search(buah, cari)
+
+print("Ditemukan di indeks:", pos)
+print("Urutan data:", buah)
+
+print("|"*50)
+
+
+print(f"---INTERPOLATION---")
+def interpolation_search(arr, key):
+    low = 0
+    high = len(arr) - 1
+
+    while low <= high and key >= arr[low] and key <= arr[high]:
+        # Konversi karakter pertama ke angka
+        low_val = ord(arr[low][0])
+        high_val = ord(arr[high][0])
+        key_val = ord(key[0])
+
+        if high_val == low_val:
+            if arr[low] == key:
+                return low
+            else:
+                return -1
+
+        pos = low + ((key_val - low_val) * (high - low)) // (high_val - low_val)
+
+        if arr[pos] == key:
+            return pos
+        elif arr[pos] < key:
+            low = pos + 1
+        else:
+            high = pos - 1
+
+    return -1
+
+
+# Contoh penggunaan
+buah = ["apel", "durian", "jeruk", "mangga", "pisang", "semangka"]
+buah.sort()
+
+cari = "pisang"
+pos = interpolation_search(buah, cari)
+
+print("Ditemukan di indeks:", pos)
+print("Urutan data:", buah)
+
+print("|" *10, "SELESAI", "|" *10)
