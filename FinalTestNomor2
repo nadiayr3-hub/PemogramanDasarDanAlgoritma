@@ -1,0 +1,79 @@
+#Nomor 2
+#Algoritma Stack Single dan Double
+# Stack Single
+print(f"STACK SINGLE")
+stack = []
+
+# push (masukin data)
+stack.append(25)
+stack.append(90)
+stack.append(60)
+
+print("Isi stack:", stack)
+
+# pop (keluarin data terakhir)
+keluar = stack.pop()
+print("Data keluar:", keluar)
+
+print("Stack sekarang:", stack)
+
+print("•" *30)
+
+print(f"STACK DOUBLE")
+# Inisialisasi Stack Ganda
+N = 6
+arr = [None] * N
+top1 = -1  # S1 tumbuh dari kiri (0)
+top2 = N   # S2 tumbuh dari kanan (N-1)
+
+def push_double(stack_id, data):
+    global top1, top2, arr
+
+    if top1 + 1 == top2:
+        print("Memori Penuh (S1 dan S2 bertemu)")
+        return
+    
+    if stack_id == 1:
+        top1 += 1
+        arr[top1] = data
+        print(f"PUSH S1: {data}. top1={top1}")
+    elif stack_id == 2:
+        top2 -= 1
+        arr[top2] = data
+        print(f"PUSH S2: {data}. top2={top2}")
+
+def pop_double(stack_id):
+    global top1, top2, arr
+
+    if stack_id == 1:
+        if top1 == -1:
+            print("Stack 1 Kosong")
+            return None
+        data = arr[top1]
+        top1 -= 1
+        print(f"POP S1: {data}. top1={top1}")
+        return data
+        
+    elif stack_id == 2:
+        if top2 == N:
+            print("Stack 2 Kosong")
+            return None
+        data = arr[top2]
+        top2 += 1
+        print(f"POP S2: {data}. top2={top2}")
+        return data
+
+# --- Contoh Penggunaan ---
+print("\n--- Double Stack Sederhana (N=6) ---")
+push_double(1, 11)  # S1
+push_double(2, 99)  # S2
+push_double(1, 22)  # S1
+push_double(2, 88)  # S2
+print(f"Status Arr: {arr}")
+
+pop_double(1)
+pop_double(2)
+pop_double(2)
+pop_double(2) # Gagal (S2 Kosong)
+
+print("•" *20, "SELESAI", "•" *20)
